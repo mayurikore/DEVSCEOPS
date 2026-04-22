@@ -16,14 +16,14 @@ pipeline {
    stage('Stage I: Build') {
       steps {
         echo "Building Jar Component ..."
-        sh "export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64; mvn clean package "
+        sh "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64; mvn clean package "
       }
     }
 
    stage('Stage II: Code Coverage ') {
       steps {
 	    echo "Running Code Coverage ..."
-        sh "export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64; mvn jacoco:report"
+        sh "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64; mvn jacoco:report"
       }
     }
 
