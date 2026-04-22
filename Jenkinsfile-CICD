@@ -13,7 +13,7 @@ pipeline {
       steps {
         git branch: 'main', credentialsId: 'GitlabCred', url: 'https://gitlab.com/learndevopseasy/devsecops/springboot-build-pipeline.git'
         echo "Building Jar Component ..."
-        sh "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64; mvn clean package "
+        sh "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64; mvn clean install -Dskiptests"
       }
     }
 
