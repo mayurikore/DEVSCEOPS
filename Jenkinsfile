@@ -20,13 +20,6 @@ pipeline {
       }
     }
 
-   stage('Stage II: Code Coverage ') {
-      steps {
-	    echo "Running Code Coverage ..."
-        sh "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64; mvn jacoco:report"
-      }
-    }
-
    stage('Stage III: SCA') {
       steps { 
         echo "Running Software Composition Analysis using OWASP Dependency-Check ..."
